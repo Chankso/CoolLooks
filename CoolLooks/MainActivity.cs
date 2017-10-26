@@ -18,16 +18,15 @@ namespace CoolLooks
     public class MainActivity : AppCompatActivity
     {
 
-        private List<Row> contactList;
+        
         private ListView listV;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.Main);
-            
 
-            contactList = new List<Row> {new Row("Undef1","undef1"), new Row("Undef2", "undef2"), new Row("Undef3", "undef3") };
+            
 
             listV = FindViewById<ListView>(Resource.Id.listFragment);
             RowAdapter listAdapter=new RowAdapter(this, contactList);
@@ -66,11 +65,7 @@ namespace CoolLooks
 
 
 
-        private void OpenDetails(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            TextView clickedTV = FindViewById<TextView>(Resource.Id.detailsText);
-            clickedTV.Text = contactList[e.Position].details + " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-        }
+       
 
 
     }
